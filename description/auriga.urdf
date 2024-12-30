@@ -1,0 +1,746 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="auriga">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.064102 0.13058 0.075146"
+        rpy="0 0 0" />
+      <mass
+        value="7" />
+      <inertia
+        ixx="0.054205"
+        ixy="5.3255E-05"
+        ixz="0.003306"
+        iyy="0.049215"
+        iyz="1.0185E-06"
+        izz="0.077749" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auriga/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.2 0.2 0.2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auriga/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="rocker_1_link">
+    <inertial>
+      <origin
+        xyz="-0.076932 -0.010223 -0.086892"
+        rpy="0 0 0" />
+      <mass
+        value="1.5" />
+      <inertia
+        ixx="0.00055446"
+        ixy="-0.00019575"
+        ixz="-0.00089962"
+        iyy="0.0036801"
+        iyz="-7.225E-05"
+        izz="0.0032548" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auriga/meshes/rocker_1_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.42745 0.44706 0.42745 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auriga/meshes/rocker_1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rocker_1_joint"
+    type="fixed">
+    <origin
+      xyz="-0.033 -0.0349903674977046 0.0926549569145568"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rocker_1_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="bogie_1_link">
+    <inertial>
+      <origin
+        xyz="-0.00063117 -0.014617 -0.067982"
+        rpy="0 0 0" />
+      <mass
+        value="1.3" />
+      <inertia
+        ixx="0.00018539"
+        ixy="-2.4832E-07"
+        ixz="9.7781E-06"
+        iyy="0.0012984"
+        iyz="-2.6746E-05"
+        izz="0.0012385" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auriga/meshes/bogie_1_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.42745 0.44706 0.42745 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auriga/meshes/bogie_1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bogie_1_joint"
+    type="revolute">
+    <origin
+      xyz="0.10013 -0.02051 -0.053968"
+      rpy="0 0 0" />
+    <parent
+      link="rocker_1_link" />
+    <child
+      link="bogie_1_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.785"
+      upper="0.785"
+      effort="10"
+      velocity="5" />
+  </joint>
+  <link
+    name="wheel_5_link">
+    <inertial>
+      <origin
+        xyz="-2.0878E-07 0.0041615 5.2366E-08"
+        rpy="0 0 0" />
+      <mass
+        value="1" />
+      <inertia
+        ixx="0.0014002"
+        ixy="-1.0049E-08"
+        ixz="3.9839E-08"
+        iyy="0.0021983"
+        iyz="8.9136E-09"
+        izz="0.0014002" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auriga/meshes/wheel_5_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auriga/meshes/wheel_5_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_5_joint"
+    type="continuous">
+    <origin
+      xyz="-0.090727 -0.10265 -0.077849"
+      rpy="0 0 0" />
+    <parent
+      link="bogie_1_link" />
+    <child
+      link="wheel_5_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="wheel_6_link">
+    <inertial>
+      <origin
+        xyz="0.38939 -0.010839 -0.00083276"
+        rpy="0 0 0" />
+      <mass
+        value="1" />
+      <inertia
+        ixx="0.0014001"
+        ixy="-1.1975E-08"
+        ixz="3.1911E-08"
+        iyy="0.0021983"
+        iyz="6.0868E-09"
+        izz="0.0014002" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auriga/meshes/wheel_6_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auriga/meshes/wheel_6_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_6_joint"
+    type="continuous">
+    <origin
+      xyz="-0.30013 -0.08765 -0.078687"
+      rpy="0 0 0" />
+    <parent
+      link="bogie_1_link" />
+    <child
+      link="wheel_6_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="wheel_4_link">
+    <inertial>
+      <origin
+        xyz="-0.38939 0.019161 0.00083282"
+        rpy="0 0 0" />
+      <mass
+        value="1" />
+      <inertia
+        ixx="0.0014001"
+        ixy="1.3224E-08"
+        ixz="1.2945E-08"
+        iyy="0.0021983"
+        iyz="-2.3574E-09"
+        izz="0.0014002" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auriga/meshes/wheel_4_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auriga/meshes/wheel_4_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_4_joint"
+    type="continuous">
+    <origin
+      xyz="0.18939 -0.12316 -0.13349"
+      rpy="0 0 0" />
+    <parent
+      link="rocker_1_link" />
+    <child
+      link="wheel_4_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="rocker_2_link">
+    <inertial>
+      <origin
+        xyz="-0.10993 0.31637 0.0057628"
+        rpy="0 0 0" />
+      <mass
+        value="1.5" />
+      <inertia
+        ixx="0.00055446"
+        ixy="0.00019575"
+        ixz="-0.00089962"
+        iyy="0.0036801"
+        iyz="7.225E-05"
+        izz="0.0032548" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auriga/meshes/rocker_2_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.42745 0.44706 0.42745 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auriga/meshes/rocker_2_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rocker_2_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rocker_2_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="bogie_2_link">
+    <inertial>
+      <origin
+        xyz="-0.00022018 0.014617 -0.067984"
+        rpy="0 0 0" />
+      <mass
+        value="1.3" />
+      <inertia
+        ixx="0.00018531"
+        ixy="8.6623E-08"
+        ixz="3.4111E-06"
+        iyy="0.0012984"
+        iyz="2.6747E-05"
+        izz="0.0012386" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auriga/meshes/bogie_2_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.42745 0.44706 0.42745 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auriga/meshes/bogie_2_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bogie_2_joint"
+    type="revolute">
+    <origin
+      xyz="0.0670443300803985 0.326654617315038 0.0386879525429506"
+      rpy="0 0 0" />
+    <parent
+      link="rocker_2_link" />
+    <child
+      link="bogie_2_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-0.785"
+      upper="0.785"
+      effort="10"
+      velocity="5" />
+  </joint>
+  <link
+    name="wheel_2_link">
+    <inertial>
+      <origin
+        xyz="1.1827E-07 -0.0041615 1.7985E-07"
+        rpy="0 0 0" />
+      <mass
+        value="1" />
+      <inertia
+        ixx="0.0014002"
+        ixy="-1.366E-09"
+        ixz="-9.1487E-09"
+        iyy="0.0021983"
+        iyz="-1.3363E-08"
+        izz="0.0014001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auriga/meshes/wheel_2_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auriga/meshes/wheel_2_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_2_joint"
+    type="continuous">
+    <origin
+      xyz="-0.090254 0.10265 -0.078396"
+      rpy="0 0 0" />
+    <parent
+      link="bogie_2_link" />
+    <child
+      link="wheel_2_link" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="wheel_1_link">
+    <inertial>
+      <origin
+        xyz="-5.2503E-08 -0.0041615 2.0875E-07"
+        rpy="0 0 0" />
+      <mass
+        value="1" />
+      <inertia
+        ixx="0.0014002"
+        ixy="8.9202E-09"
+        ixz="3.9846E-08"
+        iyy="0.0021983"
+        iyz="-1.0043E-08"
+        izz="0.0014002" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auriga/meshes/wheel_1_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auriga/meshes/wheel_1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_1_joint"
+    type="continuous">
+    <origin
+      xyz="0.089745 0.10265 -0.078979"
+      rpy="0 0 0" />
+    <parent
+      link="bogie_2_link" />
+    <child
+      link="wheel_1_link" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="wheel_3_link">
+    <inertial>
+      <origin
+        xyz="-2.084E-07 -0.0041615 5.3851E-08"
+        rpy="0 0 0" />
+      <mass
+        value="1" />
+      <inertia
+        ixx="0.0014001"
+        ixy="1.3088E-08"
+        ixz="-1.6727E-08"
+        iyy="0.0021983"
+        iyz="3.0227E-09"
+        izz="0.0014002" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auriga/meshes/wheel_3_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auriga/meshes/wheel_3_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_3_joint"
+    type="continuous">
+    <origin
+      xyz="-0.233 0.4143 -0.04"
+      rpy="0 0 0" />
+    <parent
+      link="rocker_2_link" />
+    <child
+      link="wheel_3_link" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="lidar_link">
+    <inertial>
+      <origin
+        xyz="-0.0068988 0.022525 -0.025224"
+        rpy="0 0 0" />
+      <mass
+        value="0.2" />
+      <inertia
+        ixx="2.791E-05"
+        ixy="1.5175E-07"
+        ixz="3.35E-07"
+        iyy="4.4351E-05"
+        iyz="-2.9037E-08"
+        izz="6.9475E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auriga/meshes/lidar_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auriga/meshes/lidar_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lidar_joint"
+    type="fixed">
+    <origin
+      xyz="0.072107 0.11141 0.23235"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lidar_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="camera_3d_link">
+    <inertial>
+      <origin
+        xyz="-0.015535 0.001052 -0.0099096"
+        rpy="0 0 0" />
+      <mass
+        value="0.1" />
+      <inertia
+        ixx="3.405E-05"
+        ixy="-8.0297E-07"
+        ixz="-3.2141E-07"
+        iyy="1.0078E-05"
+        iyz="1.6759E-08"
+        izz="2.6539E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auriga/meshes/camera_3d_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.59216 0.66667 0.68235 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auriga/meshes/camera_3d_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera_3d_joint"
+    type="fixed">
+    <origin
+      xyz="0.14663 0.11323 0.053793"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="camera_3d_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="camera_2d_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.1" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auriga/meshes/camera_2d_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://auriga/meshes/camera_2d_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera_2d_joint"
+    type="fixed">
+    <origin
+      xyz="0.124556268215782 0.194110275120974 0.0275499999999748"
+      rpy="0 0 3.14159265358979" />
+    <parent
+      link="base_link" />
+    <child
+      link="camera_2d_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

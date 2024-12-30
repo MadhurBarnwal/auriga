@@ -26,29 +26,30 @@
 
     <!-- The Solidworks generated urdf starts from here -->
 
-    <link name="dummy">
-   </link>
+  <link name="dummy">
+  </link>
 
-    <joint name="dummy_joint" type="fixed">
-     <parent link="dummy"/>
-     <child link="base_link"/>
-   </joint>
+  <joint name="dummy_joint" type="fixed">
+    <parent link="dummy"/>
+    <child link="base_link"/>
+  </joint>
 
+  <!-- <mesh filename="file://$(find auriga)/description/meshes/rocker_2_link.STL" /> -->
  <link
     name="base_link">
     <inertial>
       <origin
-        xyz="-0.13058 -0.075146 -0.064102"
+        xyz="-0.064102 0.13058 0.075146"
         rpy="0 0 0" />
       <mass
-        value="7.2522" />
+        value="7" />
       <inertia
-        ixx="0.049215"
-        ixy="1.0185E-06"
-        ixz="-5.3255E-05"
-        iyy="0.077749"
-        iyz="-0.003306"
-        izz="0.054205" />
+        ixx="0.054205"
+        ixy="5.3255E-05"
+        ixz="0.003306"
+        iyy="0.049215"
+        iyz="1.0185E-06"
+        izz="0.077749" />
     </inertial>
     <visual>
       <origin
@@ -78,17 +79,17 @@
     name="rocker_1_link">
     <inertial>
       <origin
-        xyz="-0.00319427397416952 0.0774063348676216 0.0514223730363776"
+        xyz="-0.076932 -0.010223 -0.086892"
         rpy="0 0 0" />
       <mass
-        value="0.157115010617485" />
+        value="1.5" />
       <inertia
-        ixx="0.0029864627992537"
-        ixy="1.12349826817264E-05"
-        ixz="3.1664433625397E-05"
-        iyy="0.00259908313149434"
-        iyz="-0.000678181482698449"
-        izz="0.000411909267858246" />
+        ixx="0.00055446"
+        ixy="-0.00019575"
+        ixz="-0.00089962"
+        iyy="0.0036801"
+        iyz="-7.225E-05"
+        izz="0.0032548" />
     </inertial>
     <visual>
       <origin
@@ -101,7 +102,7 @@
       <material
         name="">
         <color
-          rgba="0.427450980392157 0.447058823529412 0.427450980392157 1" />
+          rgba="0.42745 0.44706 0.42745 1" />
       </material>
     </visual>
     <collision>
@@ -118,8 +119,8 @@
     name="rocker_1_joint"
     type="fixed">
     <origin
-      xyz="0.03499 -0.092655 -0.033"
-      rpy="3.1416 0 3.1416" />
+      xyz="-0.033 -0.0349903674977046 0.0926549569145568"
+      rpy="0 0 0" />
     <parent
       link="base_link" />
     <child
@@ -131,17 +132,17 @@
     name="bogie_1_link">
     <inertial>
       <origin
-        xyz="0.0023959 -0.061899 -0.00023965"
+        xyz="-0.00063117 -0.014617 -0.067982"
         rpy="0 0 0" />
       <mass
-        value="0.109" />
+        value="1.3" />
       <inertia
-        ixx="0.00075509"
-        ixy="4.3842E-06"
-        ixz="1.6974E-08"
-        iyy="0.00066525"
-        iyz="2.1776E-06"
-        izz="0.00010281" />
+        ixx="0.00018539"
+        ixy="-2.4832E-07"
+        ixz="9.7781E-06"
+        iyy="0.0012984"
+        iyz="-2.6746E-05"
+        izz="0.0012385" />
     </inertial>
     <visual>
       <origin
@@ -171,14 +172,14 @@
     name="bogie_1_joint"
     type="revolute">
     <origin
-      xyz="-0.02051 0.053967 -0.099947"
-      rpy="0 0 3.1416" />
+      xyz="0.10013 -0.02051 -0.053968"
+      rpy="0 0 0" />
     <parent
       link="rocker_1_link" />
     <child
       link="bogie_1_link" />
     <axis
-      xyz="-1 0 0" />
+      xyz="0 1 0" />
     <limit
       lower="-0.785"
       upper="0.785"
@@ -189,17 +190,17 @@
     name="wheel_5_link">
     <inertial>
       <origin
-        xyz="0.00416147173779097 -9.28831021262955E-08 1.94176211321812E-07"
+        xyz="-2.0878E-07 0.0041615 5.2366E-08"
         rpy="0 0 0" />
       <mass
-        value="0.926156136524473" />
+        value="1" />
       <inertia
-        ixx="0.00219829054546711"
-        ixy="-1.07358910102717E-08"
-        ixz="8.07356099787813E-09"
-        iyy="0.00140016164031924"
-        iyz="3.89529542945175E-08"
-        izz="0.00140018200801187" />
+        ixx="0.0014002"
+        ixy="-1.0049E-08"
+        ixz="3.9839E-08"
+        iyy="0.0021983"
+        iyz="8.9136E-09"
+        izz="0.0014002" />
     </inertial>
     <visual>
       <origin
@@ -212,7 +213,7 @@
       <material
         name="">
         <color
-          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+          rgba="0.75294 0.75294 0.75294 1" />
       </material>
     </visual>
     <collision>
@@ -229,29 +230,29 @@
     name="wheel_5_joint"
     type="continuous">
     <origin
-      xyz="0.10265 -0.079036 0.089695"
-      rpy="0 0 3.1416" />
+      xyz="-0.090727 -0.10265 -0.077849"
+      rpy="0 0 0" />
     <parent
       link="bogie_1_link" />
     <child
       link="wheel_5_link" />
     <axis
-      xyz="-1 0 0" />
+      xyz="0 1 0" />
   </joint>
   <link
     name="wheel_6_link">
     <inertial>
       <origin
-        xyz="0.0041615 -0.00034885 -0.39025"
+        xyz="0.38939 -0.010839 -0.00083276"
         rpy="0 0 0" />
       <mass
-        value="0.92616" />
+        value="1" />
       <inertia
-        ixx="0.0021983"
-        ixy="9.9644E-09"
-        ixz="-9.0085E-09"
-        iyy="0.0014002"
-        iyz="4.0148E-08"
+        ixx="0.0014001"
+        ixy="-1.1975E-08"
+        ixz="3.1911E-08"
+        iyy="0.0021983"
+        iyz="6.0868E-09"
         izz="0.0014002" />
     </inertial>
     <visual>
@@ -282,30 +283,30 @@
     name="wheel_6_joint"
     type="continuous">
     <origin
-      xyz="0.10265 -0.078688 0.29995"
-      rpy="0 0 3.1416" />
+      xyz="-0.30013 -0.08765 -0.078687"
+      rpy="0 0 0" />
     <parent
       link="bogie_1_link" />
     <child
       link="wheel_6_link" />
     <axis
-      xyz="-1 0 0" />
+      xyz="0 1 0" />
   </joint>
   <link
     name="wheel_4_link">
     <inertial>
       <origin
-        xyz="0.00416147173779091 0.000348722601230034 0.39025104440836"
+        xyz="-0.38939 0.019161 0.00083282"
         rpy="0 0 0" />
       <mass
-        value="0.926156136524472" />
+        value="1" />
       <inertia
-        ixx="0.00219829054546711"
-        ixy="-1.32650632923669E-08"
-        ixz="-2.11656297334914E-09"
-        iyy="0.00140013325413858"
-        iyz="-1.15497356200624E-08"
-        izz="0.00140021039419254" />
+        ixx="0.0014001"
+        ixy="1.3224E-08"
+        ixz="1.2945E-08"
+        iyy="0.0021983"
+        iyz="-2.3574E-09"
+        izz="0.0014002" />
     </inertial>
     <visual>
       <origin
@@ -318,7 +319,7 @@
       <material
         name="">
         <color
-          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+          rgba="0.75294 0.75294 0.75294 1" />
       </material>
     </visual>
     <collision>
@@ -335,30 +336,30 @@
     name="wheel_4_joint"
     type="continuous">
     <origin
-      xyz="-0.12316 0.13231 -0.19025"
+      xyz="0.18939 -0.12316 -0.13349"
       rpy="0 0 0" />
     <parent
       link="rocker_1_link" />
     <child
       link="wheel_4_link" />
     <axis
-      xyz="-1 0 0" />
+      xyz="0 1 0" />
   </joint>
   <link
     name="rocker_2_link">
     <inertial>
       <origin
-        xyz="-0.30934 -0.015249 -0.084422"
+        xyz="-0.10993 0.31637 0.0057628"
         rpy="0 0 0" />
       <mass
-        value="0.15712" />
+        value="1.5" />
       <inertia
-        ixx="0.0029865"
-        ixy="1.1235E-05"
-        ixz="-3.1664E-05"
-        iyy="0.0025991"
-        iyz="0.00067818"
-        izz="0.00041191" />
+        ixx="0.00055446"
+        ixy="0.00019575"
+        ixz="-0.00089962"
+        iyy="0.0036801"
+        iyz="7.225E-05"
+        izz="0.0032548" />
     </inertial>
     <visual>
       <origin
@@ -401,17 +402,17 @@
     name="bogie_2_link">
     <inertial>
       <origin
-        xyz="0.00239591308301151 0.0617953988436242 0.00358741675136703"
+        xyz="-0.00022018 0.014617 -0.067984"
         rpy="0 0 0" />
       <mass
-        value="0.108995977851336" />
+        value="1.3" />
       <inertia
-        ixx="0.0007550940265459"
-        ixy="-4.37688335423889E-06"
-        ixz="-2.54091808736551E-07"
-        iyy="0.000663370668469634"
-        iyz="3.25430149906427E-05"
-        izz="0.000104686998401709" />
+        ixx="0.00018531"
+        ixy="8.6623E-08"
+        ixz="3.4111E-06"
+        iyy="0.0012984"
+        iyz="2.6747E-05"
+        izz="0.0012386" />
     </inertial>
     <visual>
       <origin
@@ -424,7 +425,7 @@
       <material
         name="">
         <color
-          rgba="0.427450980392157 0.447058823529412 0.427450980392157 1" />
+          rgba="0.42745 0.44706 0.42745 1" />
       </material>
     </visual>
     <collision>
@@ -441,14 +442,14 @@
     name="bogie_2_joint"
     type="revolute">
     <origin
-      xyz="-0.32665 -0.038665 0.067793"
-      rpy="3.1416 0 3.1416" />
+      xyz="0.0670443300803985 0.326654617315038 0.0386879525429506"
+      rpy="0 0 0" />
     <parent
       link="rocker_2_link" />
     <child
       link="bogie_2_link" />
     <axis
-      xyz="-1 0 0" />
+      xyz="0 -1 0" />
     <limit
       lower="-0.785"
       upper="0.785"
@@ -459,17 +460,17 @@
     name="wheel_2_link">
     <inertial>
       <origin
-        xyz="-2.1518E-07 -5.3832E-09 -0.0041615"
+        xyz="1.1827E-07 -0.0041615 1.7985E-07"
         rpy="0 0 0" />
       <mass
-        value="0.92616" />
+        value="1" />
       <inertia
-        ixx="0.0014001"
-        ixy="3.1138E-08"
-        ixz="1.2067E-08"
-        iyy="0.0014002"
-        iyz="-5.9011E-09"
-        izz="0.0021983" />
+        ixx="0.0014002"
+        ixy="-1.366E-09"
+        ixz="-9.1487E-09"
+        iyy="0.0021983"
+        iyz="-1.3363E-08"
+        izz="0.0014001" />
     </inertial>
     <visual>
       <origin
@@ -499,29 +500,29 @@
     name="wheel_2_joint"
     type="continuous">
     <origin
-      xyz="0.10265 0.07334 0.094409"
-      rpy="0 1.5708 0" />
+      xyz="-0.090254 0.10265 -0.078396"
+      rpy="0 0 0" />
     <parent
       link="bogie_2_link" />
     <child
       link="wheel_2_link" />
     <axis
-      xyz="0 0 1" />
+      xyz="0 -1 0" />
   </joint>
   <link
     name="wheel_1_link">
     <inertial>
       <origin
-        xyz="-0.0041615 -2.0875E-07 5.2503E-08"
+        xyz="-5.2503E-08 -0.0041615 2.0875E-07"
         rpy="0 0 0" />
       <mass
-        value="0.92616" />
+        value="1" />
       <inertia
-        ixx="0.0021983"
-        ixy="1.0043E-08"
-        ixz="-8.9202E-09"
-        iyy="0.0014002"
-        iyz="3.9846E-08"
+        ixx="0.0014002"
+        ixy="8.9202E-09"
+        ixz="3.9846E-08"
+        iyy="0.0021983"
+        iyz="-1.0043E-08"
         izz="0.0014002" />
     </inertial>
     <visual>
@@ -552,30 +553,30 @@
     name="wheel_1_joint"
     type="continuous">
     <origin
-      xyz="0.10265 0.0837717629834123 -0.0852883163107575"
+      xyz="0.089745 0.10265 -0.078979"
       rpy="0 0 0" />
     <parent
       link="bogie_2_link" />
     <child
       link="wheel_1_link" />
     <axis
-      xyz="1 0 0" />
+      xyz="0 -1 0" />
   </joint>
   <link
     name="wheel_3_link">
     <inertial>
       <origin
-        xyz="-0.00416147173779097 -6.99332501352679E-08 2.03570656609475E-07"
+        xyz="-2.084E-07 -0.0041615 5.3851E-08"
         rpy="0 0 0" />
       <mass
-        value="0.926156136524472" />
+        value="1" />
       <inertia
-        ixx="0.0021982905454671"
-        ixy="-1.99317804403964E-09"
-        ixz="-1.32841629112928E-08"
-        iyy="0.00140021060221958"
-        iyz="-1.08307848249764E-08"
-        izz="0.00140013304611153" />
+        ixx="0.0014001"
+        ixy="1.3088E-08"
+        ixz="-1.6727E-08"
+        iyy="0.0021983"
+        iyz="3.0227E-09"
+        izz="0.0014002" />
     </inertial>
     <visual>
       <origin
@@ -588,7 +589,7 @@
       <material
         name="">
         <color
-          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+          rgba="0.75294 0.75294 0.75294 1" />
       </material>
     </visual>
     <collision>
@@ -605,30 +606,30 @@
     name="wheel_3_joint"
     type="continuous">
     <origin
-      xyz="-0.4293 0.04 -0.233"
-      rpy="3.1416 0 3.1416" />
+      xyz="-0.233 0.4143 -0.04"
+      rpy="0 0 0" />
     <parent
       link="rocker_2_link" />
     <child
       link="wheel_3_link" />
     <axis
-      xyz="1 0 0" />
+      xyz="0 -1 0" />
   </joint>
   <link
     name="lidar_link">
     <inertial>
       <origin
-        xyz="0.0225246315179786 0.0252244678162723 0.00689883757739537"
+        xyz="-0.0068988 0.022525 -0.025224"
         rpy="0 0 0" />
       <mass
-        value="0.0941041855286772" />
+        value="0.2" />
       <inertia
-        ixx="4.43514677561826E-05"
-        ixy="2.9036632805171E-08"
-        ixz="-1.51745387499321E-07"
-        iyy="6.94753945949236E-05"
-        iyz="3.35003193615963E-07"
-        izz="2.79104313007998E-05" />
+        ixx="2.791E-05"
+        ixy="1.5175E-07"
+        ixz="3.35E-07"
+        iyy="4.4351E-05"
+        iyz="-2.9037E-08"
+        izz="6.9475E-05" />
     </inertial>
     <visual>
       <origin
@@ -641,7 +642,7 @@
       <material
         name="">
         <color
-          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+          rgba="0.75294 0.75294 0.75294 1" />
       </material>
     </visual>
     <collision>
@@ -658,8 +659,8 @@
     name="lidar_joint"
     type="fixed">
     <origin
-      xyz="-0.11141 -0.23235 0.072107"
-      rpy="3.1416 0 3.1416" />
+      xyz="0.072107 0.11141 0.23235"
+      rpy="0 0 0" />
     <parent
       link="base_link" />
     <child
@@ -668,13 +669,66 @@
       xyz="0 0 0" />
   </joint>
   <link
-    name="camera_link">
+    name="camera_3d_link">
+    <inertial>
+      <origin
+        xyz="-0.015535 0.001052 -0.0099096"
+        rpy="0 0 0" />
+      <mass
+        value="0.1" />
+      <inertia
+        ixx="3.405E-05"
+        ixy="-8.0297E-07"
+        ixz="-3.2141E-07"
+        iyy="1.0078E-05"
+        iyz="1.6759E-08"
+        izz="2.6539E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find auriga)/description/meshes/camera_3d_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.59216 0.66667 0.68235 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find auriga)/description/meshes/camera_3d_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera_3d_joint"
+    type="fixed">
+    <origin
+      xyz="0.14663 0.11323 0.053793"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="camera_3d_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="camera_2d_link">
     <inertial>
       <origin
         xyz="0 0 0"
         rpy="0 0 0" />
       <mass
-        value="0" />
+        value="0.1" />
       <inertia
         ixx="0"
         ixy="0"
@@ -689,7 +743,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="file://$(find auriga)/description/meshes/camera_link.STL" />
+          filename="file://$(find auriga)/description/meshes/camera_2d_link.STL" />
       </geometry>
       <material
         name="">
@@ -703,23 +757,22 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="file://$(find auriga)/description/meshes/camera_link.STL" />
+          filename="file://$(find auriga)/description/meshes/camera_2d_link.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="camera_joint"
+    name="camera_2d_joint"
     type="fixed">
     <origin
-      xyz="-0.113225697052003 -0.0537931754289137 0.146634965177554"
-      rpy="3.14159265358979 0 3.14159265358979" />
+      xyz="0.124556268215782 0.194110275120974 0.0275499999999748"
+      rpy="0 0 3.14159265358979" />
     <parent
       link="base_link" />
     <child
-      link="camera_link" />
+      link="camera_2d_link" />
     <axis
       xyz="0 0 0" />
   </joint>
-
 
 </robot>
